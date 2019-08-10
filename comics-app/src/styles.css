@@ -1,0 +1,66 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+    padding-bottom: 50px;
+    font-family: 'Marvel', sans-serif;
+    font-size: calc(1em + 1vw)
+}
+
+.margen-titulos {
+    margin-top: 20px;
+}
+
+#carouselExampleSlidesOnly {
+    margin-top: 0px;
+    margin-bottom: 20px;
+    width: 95%;
+    height: 95%;
+}
+
+.container {
+    margin-bottom: 20px;
+    font-family: 'Marvel', sans-serif;
+}
+
+.navbar {
+    font-family: 'Marvel', sans-serif;
+}
+
+
+/*Animacion*/
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.fast {
+    -webkit-animation-duration: 0.4s;
+    animation-duration: 0.4s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    animation-name: fadeIn;
+}
+
+
+/*Logo de la casa*/
+
+.avatar {
+    margin-top: 12pz;
+    padding-top: 12px;
+    padding-bottom: 12px
+}
