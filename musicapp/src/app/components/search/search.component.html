@@ -7,5 +7,11 @@
 <!--se muestra un icono de loading-->
 <app-loading *ngIf="loading" class="m-5"> </app-loading>
 
+<!-- se agrega mensaje de error  -->
+<div *ngIf="error " class="alert alert-danger animated fadeIn m-5">
+    <h3>Error</h3>
+    <p>{{mensajeError}}</p>
+</div>
+
 <!--Targetas para el resultado de la busqueda-->
 <app-tarjetas *ngIf="!loading" [items]="artistas"></app-tarjetas>

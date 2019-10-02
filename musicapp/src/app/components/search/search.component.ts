@@ -10,6 +10,8 @@ export class SearchComponent  {
 
   artistas: any[] = [];
   loading: boolean;
+  error: boolean;
+  mensajeError: string;
 
   constructor(private spotify: SpotifyService) { }
 
@@ -21,6 +23,12 @@ export class SearchComponent  {
         console.log(data);
         this.artistas = data;
         this.loading = false;
+        // se agrefa el errorServicio para mostrar mensaje de errro y quitar la animacion de loading
+      }, ( errorServicio ) => {
+
+        this.loading = false;
+        this.error = true;
+        this.mensajeError = errorServicio.error.error.message;
       });
     }
 }
