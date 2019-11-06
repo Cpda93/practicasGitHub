@@ -12,10 +12,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { PendientesPage } from '../pages/pendientes/pendientes.component';
 import { TerminadosPage } from '../pages/terminados/terminados.component';
 
+
 // DELCLARACION DE PROVIDERS O SERVICIOS ( ES LO MISMO )
 // Se agrega DeseosService en providers, es importante recordar que
 // los servicios o services son llamados en angular pero en ionic se llaman providers, pero es lo mismo
-import { DeseosService } from './servicios/tareas.service';
+import { DeseosService } from './services/deseos.service';
 
 @NgModule({
   declarations: [

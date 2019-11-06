@@ -62,7 +62,7 @@ var TabsPage = /** @class */ (function () {
         this.tab2Root = __WEBPACK_IMPORTED_MODULE_2__terminados_terminados_component__["a" /* TerminadosPage */];
     }
     TabsPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/root/webDev/gitHub/ionic/tareas/src/pages/tabs/tabs.html"*/'<ion-tabs>\n    <ion-tab [root]="tab1Root" tabTitle="Pendientes" tabIcon="home"></ion-tab>\n    <ion-tab [root]="tab2Root" tabTitle="Terminados" tabIcon="information-circle"></ion-tab>\n\n</ion-tabs>'/*ion-inline-end:"/root/webDev/gitHub/ionic/tareas/src/pages/tabs/tabs.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/root/webDev/gitHub/proyectoTareas/src/pages/tabs/tabs.html"*/'<ion-tabs>\n    <ion-tab [root]="tab1Root" tabTitle="Pendientes" tabIcon="home"></ion-tab>\n    <ion-tab [root]="tab2Root" tabTitle="Terminados" tabIcon="information-circle"></ion-tab>\n\n</ion-tabs>'/*ion-inline-end:"/root/webDev/gitHub/proyectoTareas/src/pages/tabs/tabs.html"*/
         }),
         __metadata("design:paramtypes", [])
     ], TabsPage);
@@ -79,7 +79,7 @@ var TabsPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PendientesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_servicios_tareas_service__ = __webpack_require__(195);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_services_deseos_service__ = __webpack_require__(195);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -97,9 +97,9 @@ var PendientesPage = /** @class */ (function () {
     }
     PendientesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-pendientes',template:/*ion-inline-start:"/root/webDev/gitHub/ionic/tareas/src/pages/pendientes/pendientes.component.html"*/'<ion-header>\n    <ion-navbar>\n        <ion-title>Pendientes</ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <h2>Hola Pendientes</h2>\n</ion-content>'/*ion-inline-end:"/root/webDev/gitHub/ionic/tareas/src/pages/pendientes/pendientes.component.html"*/
+            selector: 'page-pendientes',template:/*ion-inline-start:"/root/webDev/gitHub/proyectoTareas/src/pages/pendientes/pendientes.component.html"*/'<ion-header>\n    <ion-navbar>\n        <ion-title>Pendientes</ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <h2>Hola Pendientes</h2>\n</ion-content>'/*ion-inline-end:"/root/webDev/gitHub/proyectoTareas/src/pages/pendientes/pendientes.component.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__app_servicios_tareas_service__["a" /* DeseosService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__app_services_deseos_service__["a" /* DeseosService */]])
     ], PendientesPage);
     return PendientesPage;
 }());
@@ -114,6 +114,7 @@ var PendientesPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DeseosService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_lista_model__ = __webpack_require__(271);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -124,20 +125,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var DeseosService = /** @class */ (function () {
     function DeseosService() {
-        console.log(" Servicio Deseos Listo ");
+        this.listas = [];
+        var lista1 = new __WEBPACK_IMPORTED_MODULE_1__models_lista_model__["a" /* Lista */]("Recolectar piedras del infinito");
+        var lista2 = new __WEBPACK_IMPORTED_MODULE_1__models_lista_model__["a" /* Lista */]("Héroes a vencer");
+        this.listas.push(lista1, lista2);
+        console.log(this.listas);
     }
     DeseosService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])()
-        // DeseosService esta declarado en app.module.ts para poder usarlo en la aplicacion de angular
-        ,
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
         __metadata("design:paramtypes", [])
     ], DeseosService);
     return DeseosService;
 }());
 
-//# sourceMappingURL=tareas.service.js.map
+//# sourceMappingURL=deseos.service.js.map
 
 /***/ }),
 
@@ -159,7 +163,7 @@ var TerminadosPage = /** @class */ (function () {
     }
     TerminadosPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-terminadosPage',template:/*ion-inline-start:"/root/webDev/gitHub/ionic/tareas/src/pages/terminados/terminados.component.html"*/'<ion-header>\n    <ion-navbar>\n        <ion-title>Terminados</ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <h2>Hola Terminados</h2>\n</ion-content>'/*ion-inline-end:"/root/webDev/gitHub/ionic/tareas/src/pages/terminados/terminados.component.html"*/
+            selector: 'page-terminadosPage',template:/*ion-inline-start:"/root/webDev/gitHub/proyectoTareas/src/pages/terminados/terminados.component.html"*/'<ion-header>\n    <ion-navbar>\n        <ion-title>Terminados</ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <h2>Hola Terminados</h2>\n</ion-content>'/*ion-inline-end:"/root/webDev/gitHub/proyectoTareas/src/pages/terminados/terminados.component.html"*/
         })
     ], TerminadosPage);
     return TerminadosPage;
@@ -197,7 +201,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_splash_screen__ = __webpack_require__(192);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_pendientes_pendientes_component__ = __webpack_require__(194);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_terminados_terminados_component__ = __webpack_require__(196);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__servicios_tareas_service__ = __webpack_require__(195);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_deseos_service__ = __webpack_require__(195);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -249,7 +253,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_5__ionic_native_status_bar__["a" /* StatusBar */],
                 __WEBPACK_IMPORTED_MODULE_6__ionic_native_splash_screen__["a" /* SplashScreen */],
                 // Se agrega deseos service.
-                __WEBPACK_IMPORTED_MODULE_9__servicios_tareas_service__["a" /* DeseosService */],
+                __WEBPACK_IMPORTED_MODULE_9__services_deseos_service__["a" /* DeseosService */],
                 { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */] }
             ]
         })
@@ -296,7 +300,7 @@ var MyApp = /** @class */ (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/root/webDev/gitHub/ionic/tareas/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/root/webDev/gitHub/ionic/tareas/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/root/webDev/gitHub/proyectoTareas/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/root/webDev/gitHub/proyectoTareas/src/app/app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
@@ -304,6 +308,26 @@ var MyApp = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=app.component.js.map
+
+/***/ }),
+
+/***/ 271:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Lista; });
+var Lista = /** @class */ (function () {
+    function Lista(titulo) {
+        this.titulo = titulo;
+        this.terminada = false;
+        this.creadaEn = new Date();
+        this.items = [];
+        this.id = new Date().getTime();
+    }
+    return Lista;
+}());
+
+//# sourceMappingURL=lista.model.js.map
 
 /***/ })
 
