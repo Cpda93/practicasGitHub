@@ -62,7 +62,7 @@ var TabsPage = /** @class */ (function () {
         this.tab2Root = __WEBPACK_IMPORTED_MODULE_2__terminados_terminados_component__["a" /* TerminadosPage */];
     }
     TabsPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/root/webDev/gitHub/proyectoTareas/src/pages/tabs/tabs.html"*/'<ion-tabs>\n    <ion-tab [root]="tab1Root" tabTitle="Pendientes" tabIcon="home"></ion-tab>\n    <ion-tab [root]="tab2Root" tabTitle="Terminados" tabIcon="information-circle"></ion-tab>\n\n</ion-tabs>'/*ion-inline-end:"/root/webDev/gitHub/proyectoTareas/src/pages/tabs/tabs.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/root/webDev/gitHub/proyectoTareas/src/pages/tabs/tabs.html"*/'<ion-tabs color="primary">\n    <ion-tab [root]="tab1Root" tabTitle="Pendientes" tabIcon="home"></ion-tab>\n    <ion-tab [root]="tab2Root" tabTitle="Terminados" tabIcon="information-circle"></ion-tab>\n\n</ion-tabs>'/*ion-inline-end:"/root/webDev/gitHub/proyectoTareas/src/pages/tabs/tabs.html"*/
         }),
         __metadata("design:paramtypes", [])
     ], TabsPage);
@@ -97,7 +97,7 @@ var PendientesPage = /** @class */ (function () {
     }
     PendientesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-pendientes',template:/*ion-inline-start:"/root/webDev/gitHub/proyectoTareas/src/pages/pendientes/pendientes.component.html"*/'<ion-header>\n    <ion-navbar>\n        <ion-title>Pendientes</ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <h2>Hola Pendientes</h2>\n</ion-content>'/*ion-inline-end:"/root/webDev/gitHub/proyectoTareas/src/pages/pendientes/pendientes.component.html"*/
+            selector: 'page-pendientes',template:/*ion-inline-start:"/root/webDev/gitHub/proyectoTareas/src/pages/pendientes/pendientes.component.html"*/'<ion-header>\n    <ion-navbar color="primary">\n        <ion-title>Pendientes</ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content>\n    <ion-list>\n        <button ion-item *ngFor="let lista of deseosService.listas" (click)="listaSeleccionada(lista)">\n                  {{ lista.titulo }}\n                </button>\n    </ion-list>\n</ion-content>'/*ion-inline-end:"/root/webDev/gitHub/proyectoTareas/src/pages/pendientes/pendientes.component.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__app_services_deseos_service__["a" /* DeseosService */]])
     ], PendientesPage);
@@ -151,22 +151,33 @@ var DeseosService = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TerminadosPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_services_deseos_service__ = __webpack_require__(195);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
 
 var TerminadosPage = /** @class */ (function () {
-    function TerminadosPage() {
+    function TerminadosPage(deseosService) {
+        this.deseosService = deseosService;
     }
+    TerminadosPage.prototype.listaSeleccionada = function (lista) {
+        console.log(lista);
+    };
     TerminadosPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-terminadosPage',template:/*ion-inline-start:"/root/webDev/gitHub/proyectoTareas/src/pages/terminados/terminados.component.html"*/'<ion-header>\n    <ion-navbar>\n        <ion-title>Terminados</ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <h2>Hola Terminados</h2>\n</ion-content>'/*ion-inline-end:"/root/webDev/gitHub/proyectoTareas/src/pages/terminados/terminados.component.html"*/
-        })
+            selector: 'page-terminadosPage',template:/*ion-inline-start:"/root/webDev/gitHub/proyectoTareas/src/pages/terminados/terminados.component.html"*/'<ion-header>\n    <ion-navbar color="primary">\n        <ion-title>Terminados</ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content>\n    <ion-list>\n        <button ion-item *ngFor="let lista of deseosService.listas" (click)="listaSeleccionada(lista)">\n                          {{ lista.titulo }}\n                        </button>\n    </ion-list>\n</ion-content>'/*ion-inline-end:"/root/webDev/gitHub/proyectoTareas/src/pages/terminados/terminados.component.html"*/
+        }),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__app_services_deseos_service__["a" /* DeseosService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__app_services_deseos_service__["a" /* DeseosService */]) === "function" && _a || Object])
     ], TerminadosPage);
     return TerminadosPage;
+    var _a;
 }());
 
 //# sourceMappingURL=terminados.component.js.map
