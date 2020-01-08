@@ -14,9 +14,12 @@ import { TerminadosPage } from '../pages/terminados/terminados.component';
 
 
 // DELCLARACION DE PROVIDERS O SERVICIOS ( ES LO MISMO )
-// Se agrega DeseosService en providers, es importante recordar que
+// Se agrega DeseosService, agregarPAge en providers, es importante recordar que
 // los servicios o services son llamados en angular pero en ionic se llaman providers, pero es lo mismo
 import { DeseosService } from './services/deseos.service';
+import { AgregarPage } from '../pages/agregar/agregar.component';
+import { FiltroCompletadoPipe } from '../pipes/filtro-completado/filtro-completado';
+import { ListasComponent } from '../components/lista.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { DeseosService } from './services/deseos.service';
     TabsPage,
     // Se agrega PendientesPage y Terminados Page
     PendientesPage,
-    TerminadosPage
+    TerminadosPage,
+    AgregarPage,
+    FiltroCompletadoPipe,
+    ListasComponent
   ],
   imports: [
     BrowserModule,
@@ -34,9 +40,10 @@ import { DeseosService } from './services/deseos.service';
   entryComponents: [
     MyApp,
     TabsPage,
-    // Se agrega PendientesPage y TerminadosPage
+    // Se agrega PendientesPage, TerminadosPage, AgregarPage
     PendientesPage,
-    TerminadosPage
+    TerminadosPage,
+    AgregarPage
   ],
   providers: [
     StatusBar,
