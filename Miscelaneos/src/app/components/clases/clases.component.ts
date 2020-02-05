@@ -5,12 +5,12 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './clases.component.html'
 })
 export class ClasesComponent implements OnInit {
-
-  alerta:string = "alert-danger";
-  loading:Boolean = false;
+  alerta: string = "alert-danger";
+  loading: Boolean = false;
 
   propiedades:Object = {
     danger: true
+
   }
 
   constructor() { }
