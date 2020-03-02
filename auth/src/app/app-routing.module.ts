@@ -1,7 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [];
+import { ProtegidaComponent } from './components/protegida/protegida.component';
+
+const routes: Routes = [
+//se agrego el codigo de adentro y la importacion de ProfileComponent
+  {
+   path: 'profile',
+   component: ProtegidaComponent
+ }
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

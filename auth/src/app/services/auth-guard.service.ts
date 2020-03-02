@@ -17,7 +17,9 @@ export class AuthGuard implements CanActivate {
   ): Observable<boolean> | Promise<boolean|UrlTree> | boolean {
     return this.auth.isAuthenticated$.pipe(
       tap(loggedIn => {
+        console.log("Acceso consedido por el Guard")
         if (!loggedIn) {
+          console.log("Bloqueado por el Guard")
           this.auth.login(state.url);
         }
       })
