@@ -40,7 +40,12 @@
                name="apellido"
                [(ngModel)]="usuario.apellido"
                minlength="5"
-               required>
+               required
+               #apellido="ngModel">
+
+               <div *ngIf="apellido.errors?.required">
+                 Este campo es requerido
+               </div>
       </div>
     </div>
 
@@ -56,7 +61,15 @@
              name="correo"
              [(ngModel)]="usuario.correo"
              pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"
-             required>
+             required
+             #correo="ngModel">
+
+             <div *ngIf="correo.errors?.required">
+               Ingrese un correo
+             </div>
+             <div *ngIf="correo.errors?.pattern">
+               Se requiere un correo valido
+             </div>
     </div>
   </div>
 
